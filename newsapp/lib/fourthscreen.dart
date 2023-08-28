@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class fourthscreen extends StatelessWidget {
+  int index;
+  fourthscreen({super.key,required this.index});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
