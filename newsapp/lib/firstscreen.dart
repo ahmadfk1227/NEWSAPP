@@ -36,7 +36,12 @@ class firstscreen extends StatelessWidget {
                       foregroundColor: Colors.grey,
                       child: Column(
                         children: [
-                         Image(image: NetworkImage('')),
+                         Padding(
+                           padding: const EdgeInsets.only(top: 10),
+                           child: Image(image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Home-icon.svg/1200px-Home-icon.svg.png'),
+                           height: 25,
+                           ),
+                         ),
                           const Text(
                             'home',
                             style: TextStyle(
@@ -54,6 +59,12 @@ class firstscreen extends StatelessWidget {
                       backgroundColor: Colors.white,
                       child: Column(
                         children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Image(image: NetworkImage('https://cdn-icons-png.flaticon.com/512/60/60993.png'),
+                              height: 25,
+                            ),
+                          ),
                           const Text(
                             'favorite',
                             style: TextStyle(
@@ -71,6 +82,12 @@ class firstscreen extends StatelessWidget {
                       foregroundColor: const Color.fromARGB(255, 183, 183, 182),
                       child: Column(
                         children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Image(image: NetworkImage('https://static.thenounproject.com/png/4851855-200.png'),
+                              height: 25,
+                            ),
+                          ),
                           const Text(
                             'profile',
                             style: TextStyle(
@@ -90,11 +107,14 @@ class firstscreen extends StatelessWidget {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        context.read<GetNewsCubit>().getNews();
-                      },
-                      child: const Text('Let\'s Start')),
+                  Padding(
+                    padding: const EdgeInsets.only(top:50),
+                    child: ElevatedButton(
+                        onPressed: () {
+                          context.read<GetNewsCubit>().getNews();
+                        },
+                        child: const Text('Let\'s Start')),
+                  ),
 
 
 
@@ -104,9 +124,9 @@ class firstscreen extends StatelessWidget {
                       SingleChildScrollView(
                         child: Column(
                           children: [
-                            const Padding(padding: EdgeInsets.all(10)),
+                            const Padding(padding: EdgeInsets.all(8)),
                             const SizedBox(
-                              height: 37,
+                              height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -198,7 +218,7 @@ class firstscreen extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(15),
                                     child: Stack(children: [
                                       Image(
-                                        image : NetworkImage('https://s3-alpha-sig.figma.com/img/1b25/3b61/593c0eac981b4da390568868d72bc803?Expires=1693180800&Signature=qG2VjKuWKcttyBAZ4v0LfigBwXfDNKA4tTFBNNGexBkqWyj0duB8j8TxEIISOFOlMrxBDmNBqdBWQ2ufCuT6UYYAbiUtcdCMLkN6T36ibcgsfLeaQbNKMcyvMabDi53RHJbfdKWjEy82tjjXLy28iFn2Re~mVi5CNtaZd63UVUmqWGSS3yWul9FrrEcpz9PiKU-4TNlieahU42yvFOmOuZAyD3IhqnYqPfzry2OEwbnzHnpn~TBxZZdbU~m4pdexhy~nWgCS8wJSJbXVHLVKr05I5fkIW7A6jhRsenj-fk~eDVp3XH-IoHz26GpnsvzpWGPbLeO0~SotdVkBmpmviQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'),
+                                        image : NetworkImage('https://s3-alpha-sig.figma.com/img/1b25/3b61/593c0eac981b4da390568868d72bc803?Expires=1694995200&Signature=PS32ClWsFiofWRc66zuF1wnNUgZ2sVUYyjc9tl5ycr1AFOo2TIVhJTimwN~0QeGH8-757jLy5pyoUgSWxJLG5JpRMQKd0Wmz11gJJTwMU5IFXPtQ2oRHcjqIXZg0dNZxFFO2TocAXwPKsgCKA269YXeUM9DtH43S3T8SMlbcD~4-TbHmEd3gB9ZT63D3YkLEkn-eL-Z98YBQaboiEIK3DJTc5YqlGFEhGeVk-7n7SLZeUFt4DcAnQ9uKTWOm5BcmMZC9qpnl1BjyCPsGj9mA-ZE99M48Qlvtigf0QvQ8jvbaE4Mji5vXl4MIZe92J2gVyi7QmOcnsTF7F2rKZ8P2eg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'),
                                         width: 321,
                                         height: 240,
                                         fit: BoxFit.cover,
@@ -243,10 +263,11 @@ class firstscreen extends StatelessWidget {
                                       children: [
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(8),
-                                      child: Image.asset(
-                                        "assets/news.png",
-                                        width: 400,
-                                        height: 224,
+                                      child:  Image(
+                                        image : NetworkImage('https://s3-alpha-sig.figma.com/img/5baa/1281/3c0e6239a2ea7f559e4ef62cf9f3e29c?Expires=1694995200&Signature=ayzXKYqDGFAk2ziVRCJF5Oe185TgH0u7XCUm9nIFsmWnSbS9eUiZ3lNK0aWmRPeEl9chusl7Zn9xf2I-VyfxOFl89u307YAgwrAG1ATYW4LMl~lG~u3Z81Eqp4eTPv2ho4-7mjvrEh2KTkP0SPIoog3onTy0pOGh3VtEipJTi2mBlmMAn8BsC0BTloX-ACZ6XWheOZQbj5RYQwegmVVnukt4zXK3eLXt16XiDNFUoGjWORSDMRyuyGEDNL7YCnmfKsGHoqrKTvoxexWfwAXsW0AOv0o5CxPqPuf7F2XQjKjq3t-Imx7bXQWchsYvh4AM2p87Xyg3qublxsnaI4Us~g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'),
+                                        width: 321,
+                                        height: 240,
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                     const Positioned(
@@ -456,7 +477,7 @@ class firstscreen extends StatelessWidget {
                                   );
                                 } else {
                                   return const Center(
-                                      child: Text("Somethinge went wrone"));
+                                      child: Text("Somethinge went wrong"));
                                 }
                               },
                             )
